@@ -12,4 +12,16 @@ describe('Fizz Buzz test', () => {
         expect(fizzbuzz.getFizzBuzz(5)).toBe('Buzz');
     });
 
+    test('should return Fizz with number 9', () => {
+        expect(fizzbuzz.getFizzBuzz(9)).toBe('Fizz');
+    });
+
+    test('should return Buzz with number 25', () => {
+        expect(fizzbuzz.getFizzBuzz(25)).toBe('Buzz');
+    });
+
+    test('should return Fizz with number 15', () => {
+        expect(fizzbuzz.getFizzBuzz(15)).toBe('FizzBuzz');
+    });
+
 });
