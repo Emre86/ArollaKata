@@ -1,5 +1,3 @@
-# KataFizzBuzz
-
 ## Installation
 
 Run `npm install`
