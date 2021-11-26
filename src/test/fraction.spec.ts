@@ -1,6 +1,6 @@
 import { Fraction } from "../main/fraction";
 
-describe('Fizz Buzz test', () => {
+describe('Fraction test', () => {
     let fraction: Fraction;
     beforeEach(() => fraction = new Fraction());
 
