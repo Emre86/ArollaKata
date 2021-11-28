@@ -1,11 +1,17 @@
 import { TennisGame } from "../main/tennis-game";
 
 describe('Tennis unit test', () => {
-    let tennisGame: TennisGame;
-    beforeEach(() => tennisGame = new TennisGame());
+    let tGame: TennisGame;
+    beforeEach(() => tGame = new TennisGame());
 
     test('should return love when game Start ', () => {
-        expect(tennisGame.runningScore()).toEqual("love");
+        expect(tGame.runningScore()).toEqual("love");
+    });
+
+    test('should return 15 when player one win', () => {
+        tGame.playAndWinCurrentGame();
+        const score = tGame.runningScore();
+        expect(score).toEqual("15");
     });
 
 });
