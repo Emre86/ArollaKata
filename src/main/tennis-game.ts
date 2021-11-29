@@ -2,7 +2,6 @@ export class TennisGame {
 
     playerOne: boolean = true;
 
-    playerTwo: boolean = false;
     scorePlayerOne: number = 0;
     scorePlayerTwo: number = 0;
 
@@ -12,7 +11,6 @@ export class TennisGame {
 
     isAdvantage = false;
     runningScore() {
-
         if (this.isAdvantage) {
             return "advantage";
         }
@@ -22,12 +20,11 @@ export class TennisGame {
         }
 
         if (this.playerOne === true) {
-            return this.point[this.scorePlayerOne];
+            return this.getScorePlayerOne();
         } else {
-            return this.point[this.scorePlayerTwo];
+            return this.getScorePlayerTwo();
         }
     }
-
 
     getScorePlayerOne() {
         return this.point[this.scorePlayerOne];
@@ -49,11 +46,9 @@ export class TennisGame {
         } else {
             if (this.playerOne) {
                 this.scorePlayerOne++;
-            }
-            if (this.playerTwo) {
+            } else {
                 this.scorePlayerTwo++;
             }
-
             if (this.scorePlayerOne === 3 && this.scorePlayerOne === this.scorePlayerTwo) {
                 this.isDeuce = true;
             }
@@ -62,7 +57,6 @@ export class TennisGame {
 
     playAndLostCurrentGame() {
         this.playerOne = !this.playerOne;
-        this.playerTwo = !this.playerTwo;
         if (this.isAdvantage) {
             this.isAdvantage = false
         }
