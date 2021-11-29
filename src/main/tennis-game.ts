@@ -15,13 +15,28 @@ export class TennisGame {
             if (this.scorePlayerOne > this.point.length - 1) {
                 this.scorePlayerOne = 0;
                 return "win";
+
             }
             return this.point[this.scorePlayerOne].toString();
         }
     }
 
+
+    getScorePlayerOne() {
+        return "love";
+    }
+
+    getScorePlayerTwo() {
+        return "love";
+    }
+
+
     playAndWinCurrentGame() {
         this.scorePlayerOne++;
+    }
+
+    playAndLostCurrentGame() {
+
     }
 
 }

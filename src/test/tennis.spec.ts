@@ -38,4 +38,19 @@ describe('Tennis unit test', () => {
         expect(score).toEqual("win");
     });
 
+    test('should return love for two player', () => {
+        const scorePlayerOne = tGame.getScorePlayerOne();
+        const scorePlayerTwo = tGame.getScorePlayerTwo();
+        expect(scorePlayerOne).toEqual("love");
+        expect(scorePlayerTwo).toEqual("love");
+    });
+
+    test('should return love when player one lost the first times', () => {
+        tGame.playAndLostCurrentGame();
+        const score = tGame.runningScore();
+        expect(score).toEqual("love");
+    });
+
+
+
 });
