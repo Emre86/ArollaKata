@@ -14,4 +14,12 @@ describe('Tennis unit test', () => {
         expect(score).toEqual("15");
     });
 
+    test('should return 30 when player one win', () => {
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const score = tGame.runningScore();
+        expect(score).toEqual("30");
+    });
+
+
 });
