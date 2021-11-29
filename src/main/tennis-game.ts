@@ -12,6 +12,10 @@ export class TennisGame {
             return "love";
         }
         if (this.playerOne === true) {
+            if (this.scorePlayerOne > this.point.length - 1) {
+                this.scorePlayerOne = 0;
+                return "win";
+            }
             return this.point[this.scorePlayerOne].toString();
         }
     }

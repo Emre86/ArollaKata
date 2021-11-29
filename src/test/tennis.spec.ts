@@ -8,20 +8,20 @@ describe('Tennis unit test', () => {
         expect(tGame.runningScore()).toEqual("love");
     });
 
-    test('should return 15 when player one win', () => {
+    test('should return 15 when player one win one times', () => {
         tGame.playAndWinCurrentGame();
         const score = tGame.runningScore();
         expect(score).toEqual("15");
     });
 
-    test('should return 30 when player one win', () => {
+    test('should return 30 when player one win two times', () => {
         tGame.playAndWinCurrentGame();
         tGame.playAndWinCurrentGame();
         const score = tGame.runningScore();
         expect(score).toEqual("30");
     });
 
-    test('should return 40 when player one win', () => {
+    test('should return 40 when player one win three times', () => {
         tGame.playAndWinCurrentGame();
         tGame.playAndWinCurrentGame();
         tGame.playAndWinCurrentGame();
@@ -29,6 +29,13 @@ describe('Tennis unit test', () => {
         expect(score).toEqual("40");
     });
 
-
+    test('should return win when player one win four times', () => {
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const score = tGame.runningScore();
+        expect(score).toEqual("win");
+    });
 
 });
