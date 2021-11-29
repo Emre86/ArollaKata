@@ -3,7 +3,8 @@ export class FizzBuzz {
     getFizzBuzz(value: number): string {
         const fizz = this.getFizz(value);
         const buzz = this.getBuzz(value);
-        return `${fizz}${buzz}`;
+        const res = `${fizz}${buzz}`;
+        return res === '' ? value.toString() : res;
     }
 
     getFizz(value: number): string {

@@ -28,20 +28,20 @@ describe('Fizz Buzz test', () => {
         expect(fizzbuzz.getFizzBuzz(60)).toBe('FizzBuzz');
     });
 
-    test('should return string empty with number 2', () => {
-        expect(fizzbuzz.getFizzBuzz(2)).toBe('');
+    test('should return string 2 with number 2', () => {
+        expect(fizzbuzz.getFizzBuzz(2)).toBe('2');
     });
 
-    test('should return string empty with number 14', () => {
-        expect(fizzbuzz.getFizzBuzz(14)).toBe('');
+    test('should return string 14 with number 14', () => {
+        expect(fizzbuzz.getFizzBuzz(14)).toBe('14');
     });
 
-    test('should return string empty with number 26', () => {
-        expect(fizzbuzz.getFizzBuzz(26)).toBe('');
+    test('should return string 26 with number 26', () => {
+        expect(fizzbuzz.getFizzBuzz(26)).toBe('26');
     });
 
-    test('should return string empty with number 59', () => {
-        expect(fizzbuzz.getFizzBuzz(59)).toBe('');
+    test('should return string 59 with number 59', () => {
+        expect(fizzbuzz.getFizzBuzz(59)).toBe('59');
     });
 
 });
