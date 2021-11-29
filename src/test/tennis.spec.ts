@@ -201,4 +201,61 @@ describe('Tennis unit test', () => {
     });
 
 
+    test('should return deuce on the lost of advantage', () => {
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndLostCurrentGame();
+        const scorePlayerOne = tGame.getScorePlayerOne();
+        const scorePlayerTwo = tGame.getScorePlayerTwo();
+        expect(scorePlayerOne).toEqual("40");
+        expect(scorePlayerTwo).toEqual("40");
+        const score = tGame.runningScore();
+        expect(score).toEqual("deuce");
+    });
+
+    test('should return advantage for the first player after the lost advantage for the second player', () => {
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const scorePlayerOne = tGame.getScorePlayerOne();
+        const scorePlayerTwo = tGame.getScorePlayerTwo();
+        expect(scorePlayerOne).toEqual("40");
+        expect(scorePlayerTwo).toEqual("40");
+        const score = tGame.runningScore();
+        expect(score).toEqual("advantage");
+    });
+
+    test('should return win for the first player after the lost advantage for the second player', () => {
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const scorePlayerOne = tGame.getScorePlayerOne();
+        const scorePlayerTwo = tGame.getScorePlayerTwo();
+        expect(scorePlayerOne).toEqual("win");
+        expect(scorePlayerTwo).toEqual("40");
+        const score = tGame.runningScore();
+        expect(score).toEqual("win");
+    });
+
 });

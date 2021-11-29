@@ -61,8 +61,11 @@ export class TennisGame {
     }
 
     playAndLostCurrentGame() {
-        this.playerOne = false;
-        this.playerTwo = true;
+        this.playerOne = !this.playerOne;
+        this.playerTwo = !this.playerTwo;
+        if (this.isAdvantage) {
+            this.isAdvantage = false
+        }
     }
 
 }
