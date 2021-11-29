@@ -2,6 +2,7 @@ export class TennisGame {
 
     playerOne: boolean = true;
 
+    playerTwo: boolean = false;
     scorePlayerOne: number = 0;
     scorePlayerTwo: number = 0;
 
@@ -18,6 +19,12 @@ export class TennisGame {
 
             }
             return this.point[this.scorePlayerOne].toString();
+        } else {
+            if (this.scorePlayerTwo > this.point.length - 1) {
+                this.scorePlayerTwo = 0;
+                return "win";
+            }
+            return this.point[this.scorePlayerTwo].toString();
         }
     }
 
@@ -32,11 +39,17 @@ export class TennisGame {
 
 
     playAndWinCurrentGame() {
-        this.scorePlayerOne++;
+        if (this.playerOne) {
+            this.scorePlayerOne++;
+        }
+        if (this.playerTwo) {
+            this.scorePlayerTwo++;
+        }
     }
 
     playAndLostCurrentGame() {
-
+        this.playerOne = false;
+        this.playerTwo = true;
     }
 
 }

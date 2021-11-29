@@ -51,6 +51,37 @@ describe('Tennis unit test', () => {
         expect(score).toEqual("love");
     });
 
+    test('should return 15 when player one lost the first times And player two win the first times', () => {
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const score = tGame.runningScore();
+        expect(score).toEqual("15");
+    });
 
+    test('should return 30 when player one lost the first times And player two win the next two times', () => {
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const score = tGame.runningScore();
+        expect(score).toEqual("30");
+    });
 
+    test('should return 40 when player one lost the first times And player two win the next three times', () => {
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const score = tGame.runningScore();
+        expect(score).toEqual("40");
+    });
+
+    test('should return win when player one lost the first times And player two win the next four times', () => {
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const score = tGame.runningScore();
+        expect(score).toEqual("win");
+    });
 });
