@@ -6,7 +6,7 @@ export class TennisGame {
     scorePlayerOne: number = 0;
     scorePlayerTwo: number = 0;
 
-    point: Array<number> = [0, 15, 30, 40];
+    point: Array<string> = ["love", "15", "30", "40"];
 
     runningScore() {
         if (this.scorePlayerOne === 0 && this.scorePlayerTwo === 0) {
@@ -18,23 +18,23 @@ export class TennisGame {
                 return "win";
 
             }
-            return this.point[this.scorePlayerOne].toString();
+            return this.point[this.scorePlayerOne];
         } else {
             if (this.scorePlayerTwo > this.point.length - 1) {
                 this.scorePlayerTwo = 0;
                 return "win";
             }
-            return this.point[this.scorePlayerTwo].toString();
+            return this.point[this.scorePlayerTwo];
         }
     }
 
 
     getScorePlayerOne() {
-        return "love";
+        return this.point[this.scorePlayerOne];
     }
 
     getScorePlayerTwo() {
-        return "love";
+        return this.point[this.scorePlayerTwo];
     }
 
 

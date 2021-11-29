@@ -84,4 +84,69 @@ describe('Tennis unit test', () => {
         const score = tGame.runningScore();
         expect(score).toEqual("win");
     });
+
+    test('should return love for player one and 15 for player two ', () => {
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const scorePlayerOne = tGame.getScorePlayerOne();
+        const scorePlayerTwo = tGame.getScorePlayerTwo();
+        expect(scorePlayerOne).toEqual("love");
+        expect(scorePlayerTwo).toEqual("15");
+    });
+
+    test('should return love for player one and 30 for player two ', () => {
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const scorePlayerOne = tGame.getScorePlayerOne();
+        const scorePlayerTwo = tGame.getScorePlayerTwo();
+        expect(scorePlayerOne).toEqual("love");
+        expect(scorePlayerTwo).toEqual("30");
+    });
+
+    test('should return love for player one and 40 for player two ', () => {
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const scorePlayerOne = tGame.getScorePlayerOne();
+        const scorePlayerTwo = tGame.getScorePlayerTwo();
+        expect(scorePlayerOne).toEqual("love");
+        expect(scorePlayerTwo).toEqual("40");
+    });
+
+    test('should return 15 for player one and 15 for player two ', () => {
+        tGame.playAndWinCurrentGame();
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const scorePlayerOne = tGame.getScorePlayerOne();
+        const scorePlayerTwo = tGame.getScorePlayerTwo();
+        expect(scorePlayerOne).toEqual("15");
+        expect(scorePlayerTwo).toEqual("15");
+    });
+
+    test('should return 15 for player one and 30 for player two ', () => {
+        tGame.playAndWinCurrentGame();
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const scorePlayerOne = tGame.getScorePlayerOne();
+        const scorePlayerTwo = tGame.getScorePlayerTwo();
+        expect(scorePlayerOne).toEqual("15");
+        expect(scorePlayerTwo).toEqual("30");
+    });
+
+    test('should return 30 for player one and 40 for player two ', () => {
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const scorePlayerOne = tGame.getScorePlayerOne();
+        const scorePlayerTwo = tGame.getScorePlayerTwo();
+        expect(scorePlayerOne).toEqual("30");
+        expect(scorePlayerTwo).toEqual("40");
+    });
+
 });
