@@ -5,7 +5,7 @@ export class TennisGame {
     scorePlayerOne: number = 0;
     scorePlayerTwo: number = 0;
 
-    point: Array<number> = [0, 15, 30];
+    point: Array<number> = [0, 15, 30, 40];
 
     runningScore() {
         if (this.scorePlayerOne === 0 && this.scorePlayerTwo === 0) {
