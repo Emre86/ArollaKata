@@ -182,4 +182,23 @@ describe('Tennis unit test', () => {
         expect(score).toEqual("advantage");
     });
 
+    test('should return win for the current player', () => {
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const scorePlayerOne = tGame.getScorePlayerOne();
+        const scorePlayerTwo = tGame.getScorePlayerTwo();
+        expect(scorePlayerOne).toEqual("40");
+        expect(scorePlayerTwo).toEqual("win");
+        const score = tGame.runningScore();
+        expect(score).toEqual("win");
+    });
+
+
 });
