@@ -149,4 +149,20 @@ describe('Tennis unit test', () => {
         expect(scorePlayerTwo).toEqual("40");
     });
 
+    test('should return deuce for two players', () => {
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const scorePlayerOne = tGame.getScorePlayerOne();
+        const scorePlayerTwo = tGame.getScorePlayerTwo();
+        const score = tGame.runningScore();
+        expect(scorePlayerOne).toEqual("40");
+        expect(scorePlayerTwo).toEqual("40");
+        expect(score).toEqual("deuce");
+    });
+
 });

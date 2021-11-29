@@ -9,14 +9,14 @@ export class TennisGame {
     point: Array<string> = ["love", "15", "30", "40"];
 
     runningScore() {
-        if (this.scorePlayerOne === 0 && this.scorePlayerTwo === 0) {
-            return "love";
+        if (this.scorePlayerOne === 3 && this.scorePlayerOne === this.scorePlayerTwo) {
+            return "deuce";
         }
+
         if (this.playerOne === true) {
             if (this.scorePlayerOne > this.point.length - 1) {
                 this.scorePlayerOne = 0;
                 return "win";
-
             }
             return this.point[this.scorePlayerOne];
         } else {
