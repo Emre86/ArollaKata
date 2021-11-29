@@ -19,7 +19,7 @@ export class TennisGame {
             return "deuce";
         }
 
-        if (this.playerOne === true) {
+        if (this.playerOne) {
             return this.getScorePlayerOne();
         } else {
             return this.getScorePlayerTwo();
