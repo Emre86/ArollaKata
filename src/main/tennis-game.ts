@@ -8,8 +8,16 @@ export class TennisGame {
 
     point: Array<string> = ["love", "15", "30", "40"];
 
+    isDeuce = false;
+
+    isAdvantage = false;
     runningScore() {
-        if (this.scorePlayerOne === 3 && this.scorePlayerOne === this.scorePlayerTwo) {
+
+        if (this.isAdvantage) {
+            return "advantage";
+        }
+
+        if (this.isDeuce) {
             return "deuce";
         }
 
@@ -39,11 +47,20 @@ export class TennisGame {
 
 
     playAndWinCurrentGame() {
-        if (this.playerOne) {
-            this.scorePlayerOne++;
-        }
-        if (this.playerTwo) {
-            this.scorePlayerTwo++;
+
+        if (this.isDeuce) {
+            this.isAdvantage = true;
+        } else {
+            if (this.playerOne) {
+                this.scorePlayerOne++;
+            }
+            if (this.playerTwo) {
+                this.scorePlayerTwo++;
+            }
+
+            if (this.scorePlayerOne === 3 && this.scorePlayerOne === this.scorePlayerTwo) {
+                this.isDeuce = true;
+            }
         }
     }
 

@@ -165,4 +165,21 @@ describe('Tennis unit test', () => {
         expect(score).toEqual("deuce");
     });
 
+    test('should return advantage for the current player', () => {
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndLostCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        tGame.playAndWinCurrentGame();
+        const scorePlayerOne = tGame.getScorePlayerOne();
+        const scorePlayerTwo = tGame.getScorePlayerTwo();
+        const score = tGame.runningScore();
+        expect(scorePlayerOne).toEqual("40");
+        expect(scorePlayerTwo).toEqual("40");
+        expect(score).toEqual("advantage");
+    });
+
 });
