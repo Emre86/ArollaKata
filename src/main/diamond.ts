@@ -1,34 +1,35 @@
 export class Diamond {
 
+
+    range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step));
     getDiamond(letter: string) {
-        if (letter === "D") {
-            const a = this.generateDisplay("A", 3, 0);
-            const b = this.generateDisplay("B", 2, 1);
-            const c = this.generateDisplay("C", 1, 3);
-            const d = this.generateDisplay("D", 0, 5);
-            return `${a}${b}${c}${d}${c}${b}${a}`;
-        }
-        if (letter === "C") {
-            const a = this.generateDisplay("A", 2, 0);
-            const b = this.generateDisplay("B", 1, 1);
-            const c = this.generateDisplay("C", 0, 3);
-            return `${a}${b}${c}${b}${a}`;
-        }
-        if (letter === "B") {
-            const a = this.generateDisplay("A", 1, 0);
-            const b = this.generateDisplay("B", 0, 1);
-            return `${a}${b}${a}`;
-        }
-        return "A";
+        const a = "A".charCodeAt(0);
+        const l = letter.charCodeAt(0);
 
+        const spaceExtern = this.range(0, (l - a), 1);
+        const spaceIntern = this.range(1, (l - a) * 2 - 1, 2);
+        spaceIntern.unshift(0);
 
+        let bottomDiamond = '';
+        for (let i = 1; i < spaceExtern.length; i++) {
+            const lineDiamond = this.generateLineDiamond(String.fromCharCode(l - i), spaceExtern[i], spaceIntern[spaceIntern.length - i - 1]);
+            bottomDiamond = bottomDiamond.concat(lineDiamond);
+        }
 
+        spaceExtern.reverse();
+
+        let topDiamond = '';
+        for (let i = 0; i < spaceExtern.length; i++) {
+            const lineDiamond = this.generateLineDiamond(String.fromCharCode(a + i), spaceExtern[i], spaceIntern[i]);
+            topDiamond = topDiamond.concat(lineDiamond);
+        }
+
+        return `${topDiamond}${bottomDiamond}`;
     }
 
-
-    generateDisplay(letter: string, spaceExtern: number, spaceIntern: number) {
+    generateLineDiamond(letter: string, spaceExtern: number, spaceIntern: number) {
         const extern: string = " ".repeat(spaceExtern);
-        const intern: string = " ".repeat(spaceIntern)
+        const intern: string = " ".repeat(spaceIntern);
         if (spaceIntern === 0) {
             return `${extern}${letter}\n`;
         }

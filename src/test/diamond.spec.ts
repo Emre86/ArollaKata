@@ -5,7 +5,7 @@ describe('Diamond unit test', () => {
     beforeEach(() => diamond = new Diamond());
 
     test('should return Diamond with letter A', () => {
-        expect(diamond.getDiamond("A")).toBe("A");
+        expect(diamond.getDiamond("A")).toBe("A\n");
     });
 
     test('should return Diamond with letter B', () => {
@@ -20,4 +20,7 @@ describe('Diamond unit test', () => {
         expect(diamond.getDiamond("D")).toBe("   A\n  B B\n C   C\nD     D\n C   C\n  B B\n   A\n");
     });
 
+    test('should return Diamond with letter F', () => {
+        expect(diamond.getDiamond("F")).toBe("     A\n    B B\n   C   C\n  D     D\n E       E\nF         F\n E       E\n  D     D\n   C   C\n    B B\n     A\n");
+    });
 });
