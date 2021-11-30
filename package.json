@@ -1,7 +1,7 @@
 {
-  "name": "fizzbuzz",
+  "name": "arollakata",
   "version": "1.0.0",
-  "description": "FizzBuzz kata",
+  "description": "Arolla kata",
   "main": "index.js",
   "scripts": {
     "test": "jest"
