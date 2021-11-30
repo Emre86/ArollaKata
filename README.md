@@ -8,6 +8,8 @@ Run `npm run test` to execute the unit tests via [jest](https://jestjs.io) and [
 
 Run specific files:
 
-`npm test -- src/test/fraction.spec.ts`
+`npm test -- src/test/diamond.spec.ts`
+
+[//]: <> (`npm test -- src/test/fraction.spec.ts`)
     
-`npm test -- src/test/fizzbuzz.spec.ts`
+[//]: <> (`npm test -- src/test/fizzbuzz.spec.ts`)
