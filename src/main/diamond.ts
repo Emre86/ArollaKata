@@ -1,6 +1,13 @@
 export class Diamond {
 
     getDiamond(letter: string) {
+        if (letter === "D") {
+            const a = this.generateDisplay("A", 3, 0);
+            const b = this.generateDisplay("B", 2, 1);
+            const c = this.generateDisplay("C", 1, 3);
+            const d = this.generateDisplay("D", 0, 5);
+            return `${a}${b}${c}${d}${c}${b}${a}`;
+        }
         if (letter === "C") {
             const a = this.generateDisplay("A", 2, 0);
             const b = this.generateDisplay("B", 1, 1);

@@ -16,4 +16,8 @@ describe('Diamond unit test', () => {
         expect(diamond.getDiamond("C")).toBe("  A\n B B\nC   C\n B B\n  A\n");
     });
 
+    test('should return Diamond with letter D', () => {
+        expect(diamond.getDiamond("D")).toBe("   A\n  B B\n C   C\nD     D\n C   C\n  B B\n   A\n");
+    });
+
 });
