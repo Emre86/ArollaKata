@@ -9,11 +9,11 @@ describe('Diamond unit test', () => {
     });
 
     test('should return Diamond with letter B', () => {
-        expect(diamond.getDiamond("B")).toBe(" A \nB B\n A \n");
+        expect(diamond.getDiamond("B")).toBe(" A\nB B\n A\n");
     });
 
     test('should return Diamond with letter C', () => {
-        expect(diamond.getDiamond("C")).toBe("  A  \n B B \nC   C\n B B \n  A  \n");
+        expect(diamond.getDiamond("C")).toBe("  A\n B B\nC   C\n B B\n  A\n");
     });
 
 });
