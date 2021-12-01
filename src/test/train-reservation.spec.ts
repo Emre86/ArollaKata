@@ -14,6 +14,11 @@ describe('Train Reservation test', () => {
         expect(expected).toStrictEqual(reponse);
     });
 
-
+    test('shoud return json for seats and booking_reference for a train', () => {
+        const trainId = "express_2000";
+        const reponse = trainReservation.booking(trainId);
+        const expected = { "seats": { "1A": { "booking_reference": "", "seat_number": "1", "coach": "A" }, "2A": { "booking_reference": "", "seat_number": "2", "coach": "A" } } };
+        expect(expected).toStrictEqual(reponse);
+    });
 
 });
